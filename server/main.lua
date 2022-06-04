@@ -1,3 +1,7 @@
+--[[ ===================================================== ]]--
+--[[      QBCore Admin Job Changer Script by MaDHouSe      ]]--
+--[[ ===================================================== ]]--
+
 local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateCallback('qb-adminjobs:server:haspermission', function(source, cb)
