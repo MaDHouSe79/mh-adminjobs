@@ -7,13 +7,15 @@ Jobs (Police/Ambulance/Mechanic)
 
 ## 🙏 How to install and do not forget anything, or it will not work, or give many errors.
 - 👉 Step 1: Copy the directory qb-adminjobs to resources/[qb]/
-- 👉 Step 2: use `ensure qb-adminjobs` to start the script
+- 👉 Step 2: use `ensure qb-adminjobs` to start the script, or restart the server.
 
 
-## Commands
-- /onduty      (To go on doty)
-- /offduty    (To go off duty)
-- /unemployed (Sst to )
-- /poljob
-- /ambjob
-- /mechjob
+## Commands (Admin only)
+- /onduty      (Go on duty)
+- /offduty     (Go off duty)
+- /unemployed  (Sst job to unemployed)
+- /poljob      (Sst job to police)
+- /ambjob      (Sst job to ambulance)
+- /mechjob     (Sst job to mechanic)
+- /carjob      (Sst job to cardealer)
+- /realjob     (Sst job to realestate)
