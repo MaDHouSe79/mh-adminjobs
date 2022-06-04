@@ -7,7 +7,7 @@ Config.Commands       = {
 }
 
 Config.JobCommands    = {
-    ['unemployed']    = 'werkloos',
+    ['unemployed']    = 'unemployed',
     ['police']        = 'poljob',
     ['ambulance']     = 'ambjob',
     ['mechanic']      = 'mechjob',
