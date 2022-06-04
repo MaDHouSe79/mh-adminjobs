@@ -18,7 +18,7 @@ Config.JobBossRank    = {
     ['unemployed']    = 0,
     ['police']        = 3,
     ['ambulance']     = 3,
-    ['mechanic']      = 3
+    ['mechanic']      = 3,
     ['cardealer']     = 3,
     ['realestate']    = 3,
 }
