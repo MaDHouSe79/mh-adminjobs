@@ -8,7 +8,7 @@ local function SetJob(source, job, rank)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob(job, rank)
-    TriggerClientEvent('QBCore:Notify', src, 'Congratulations on your new job as a cardealer with rank '..rank..' (Boss)')
+    TriggerClientEvent('QBCore:Notify', src, 'Congratulations on your new job as a '..job..' with rank '..rank..' (Boss)')
     if job == 'police' then
         TriggerEvent("police:server:UpdateCurrentCops")
         TriggerEvent("police:server:UpdateBlips")
