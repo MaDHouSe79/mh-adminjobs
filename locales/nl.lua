@@ -9,7 +9,7 @@ local Translations = {
         ["unemployed"] = "Maak jezelf koos werkloos", 
         ["onduty"]     = "Ga in dienst", 
         ["offduty"]    = "Ga uit dienst", 
-        ["job_change"] = "Gefeliciteerd met je nieuwe baan als %{job{} met de rang %{rank} (Baas)", 
+        ["job_change"] = "Gefeliciteerd met je nieuwe baan als %{job} met de rang %{rank} (Baas)", 
     },
 }
 
