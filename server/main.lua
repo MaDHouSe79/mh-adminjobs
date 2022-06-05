@@ -4,15 +4,15 @@
 
 local QBCore = exports['qb-core']:GetCoreObject()
 
-QBCore.Commands.Add(Config.JobCommands.onduty, "Put yourself in service", {}, false, function(source)
+QBCore.Commands.Add('onduty', "Put yourself in service", {}, false, function(source)
     TriggerClientEvent("qb-adminjobs:client:ToggleDuty", source)
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.offduty, "Take you out of service", {}, false, function(source)
+QBCore.Commands.Add('offduty', "Take you out of service", {}, false, function(source)
     TriggerClientEvent("qb-adminjobs:client:ToggleDuty", source)
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.police, "Give yourself police as a job", {}, true, function(source)
+QBCore.Commands.Add('poljob', "Give yourself police as a job", {}, true, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('police', Config.JobBossRank.police)
@@ -21,7 +21,7 @@ QBCore.Commands.Add(Config.JobCommands.police, "Give yourself police as a job", 
     TriggerEvent("police:server:UpdateBlips")
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.ambulance, "Give your self ambulance as a job", {}, true, function(source)
+QBCore.Commands.Add('ambjob', "Give your self ambulance as a job", {}, true, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('ambulance', Config.JobBossRank.ambulance)
@@ -29,28 +29,28 @@ QBCore.Commands.Add(Config.JobCommands.ambulance, "Give your self ambulance as a
     TriggerEvent("police:server:UpdateBlips")
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.mechanic, "Give your self mechanic as job", {}, true, function(source)
+QBCore.Commands.Add('mechjob', "Give your self mechanic as job", {}, true, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('mechanic', Config.JobBossRank.mechanic)
     TriggerClientEvent('QBCore:Notify', src, 'Congratulations on your new job as a mechanic with rank '..Config.JobBossRank.mechanic..' (Boss)')
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.cardealer, "Give your self cardealer as job", {}, true, function(source)
+QBCore.Commands.Add('carjob', "Give your self cardealer as job", {}, true, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('cardealer', Config.JobBossRank.cardealer)
     TriggerClientEvent('QBCore:Notify', src, 'Congratulations on your new job as a cardealer with rank '..Config.JobBossRank.cardealer..' (Boss)')
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.realestate, "Give your self realestate as job", {}, true, function(source)
+QBCore.Commands.Add('realjob', "Give your self realestate as job", {}, true, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('realestate', Config.JobBossRank.realestate)
     TriggerClientEvent('QBCore:Notify', src, 'Congratulations on your new job as a realestate with rank '..Config.JobBossRank.realestate..' (Boss)')
 end, 'admin')
 
-QBCore.Commands.Add(Config.JobCommands.unemployed, "Make yourself unemployed", {}, false, function(source)
+QBCore.Commands.Add('nojob', "Make yourself unemployed", {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     Player.Functions.SetJob('unemployed', Config.JobBossRank.unemployed)
