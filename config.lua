@@ -1,24 +1,10 @@
 Config                = {}
 
-Config.Commands       = {
-    ['onduty']        = 'onduty',
-    ['offduty']       = 'offduty',
-}
-
-Config.JobCommands    = {
-    ['unemployed']    = 'nojob',
-    ['police']        = 'poljob',
-    ['ambulance']     = 'ambjob',
-    ['mechanic']      = 'mechjob',
-    ['cardealer']     = 'carjob',
-    ['realestate']    = 'realjob',
-}
-
 Config.JobBossRank    = {
-    ['unemployed']    = 0,
-    ['police']        = 3,
-    ['ambulance']     = 3,
-    ['mechanic']      = 3,
-    ['cardealer']     = 3,
-    ['realestate']    = 3,
+    ['unemployed']    = 0, 
+    ['police']        = 3, -- set this to the boss rank
+    ['ambulance']     = 3, -- set this to the boss rank
+    ['mechanic']      = 3, -- set this to the boss rank
+    ['cardealer']     = 3, -- set this to the boss rank
+    ['realestate']    = 3, -- set this to the boss rank
 }
