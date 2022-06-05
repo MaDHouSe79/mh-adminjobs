@@ -9,7 +9,7 @@ local Translations = {
         ["unemployed"] = "Make yourself unemployed", 
         ["onduty"]     = "Put yourself in service", 
         ["offduty"]    = "Take you out of service", 
-        ["job_change"] = "Congratulations on your new job as a %{job{} with rank %{rank} (Boss)", 
+        ["job_change"] = "Congratulations on your new job as a %{job} with rank %{rank} (Boss)", 
     },
 }
 
