@@ -19,14 +19,14 @@
 
 
 ## 👇 Commands (Admin only)
-- 👉 /onduty      (Go on duty)
-- 👉 /offduty     (Go off duty)
-- 👉 /unemployed  (Set your job to unemployed)
-- 👉 /poljob      (Set your job to police)
-- 👉 /ambjob      (Set your job to ambulance)
-- 👉 /mechjob     (Set your job to mechanic)
-- 👉 /carjob      (Set your job to cardealer)
-- 👉 /realjob     (Set your job to realestate)
+- 👉 /onduty     (Go on duty)
+- 👉 /offduty    (Go off duty)
+- 👉 /nojob      (Set your job to unemployed)
+- 👉 /poljob     (Set your job to police)
+- 👉 /ambjob     (Set your job to ambulance)
+- 👉 /mechjob    (Set your job to mechanic)
+- 👉 /carjob     (Set your job to cardealer)
+- 👉 /realjob    (Set your job to realestate)
 
 
 ## 🐞 Any bugs issues or suggestions, let my know.
