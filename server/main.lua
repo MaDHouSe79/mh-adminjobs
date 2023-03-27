@@ -15,6 +15,7 @@ local function SetJob(source, job, rank)
     if job == 'ambulance' then
         TriggerEvent("police:server:UpdateBlips")
     end
+    Player.Functions.SetJobDuty(true)
 end
 
 QBCore.Commands.Add('nojob', Lang:t('jobInfo.unemployed'), {}, false, function(source) 
