@@ -58,10 +58,5 @@
 - 👉 /realjob    (Set your job to realestate)
 
 
-## 🐞 Any bugs issues or suggestions, let my know.
-- If you have any suggestions or nice ideas let me know and we can see what we can do 👊😎
-
-
-## 🙈 Youtube & Discord
+# 🙈 Youtube
 - [Youtube](https://www.youtube.com/c/MaDHouSe79)
-- [Discord](https://discord.gg/cEMSeE9dgS)
