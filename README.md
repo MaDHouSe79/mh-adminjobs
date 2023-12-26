@@ -37,7 +37,7 @@
 
 ## How to install and do not forget anything, or it will not work.
 - Step 1: Copy the directory mh-adminjobs to resources/[mh]/
-- Step 2: use `ensure mh-adminjobs` to start the script, or restart the server.
+- Step 2: use `ensure [mh]` to start, or restart the server.
 
 
 ## Available Jobs 
