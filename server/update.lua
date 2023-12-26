@@ -1,3 +1,6 @@
+--[[ ===================================================== ]]--
+--[[        MH Admin Job Changer Script by MaDHouSe        ]]--
+--[[ ===================================================== ]]--
 local script = GetCurrentResourceName()
 
 local function checkVersion(err, responseText, headers)
