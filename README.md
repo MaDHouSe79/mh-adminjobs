@@ -8,6 +8,9 @@
   <a href="https://github.com/MaDHouSe79/mh-adminjobs/issues">
     <img src="https://img.shields.io/github/issues/MaDHouSe79/mh-adminjobs"/> 
   </a>
+  <a href="https://github.com/MaDHouSe79/mh-adminjobs/watchers">
+    <img src="https://img.shields.io/github/watchers/MaDHouSe79/mh-adminjobs"/> 
+  </a> 
   <a href="https://github.com/MaDHouSe79/mh-adminjobs/network/members">
     <img src="https://img.shields.io/github/forks/MaDHouSe79/mh-adminjobs"/> 
   </a>  
@@ -23,40 +26,24 @@
   <img alig src="https://github-profile-trophy.vercel.app/?username=MaDHouSe79&margin-w=15&column=6" />
 </p>
 
-<p align="center">
-  <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
-</p>
+## 🙈 Youtube
+- [Youtube](https://www.youtube.com/@MaDHouSe79)
 
-## MH-AdminJobs - A ingame job changer for admins
+## mh-adminjobs 
+- A ingame job changer for admins
 
+## Dependencies
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 
-## 👇 Available Whitelisted Jobs 
-- Police
-- Ambulance
-- Mechanic
-- Cardealer
-- Realestate
-
-
-## 💪 Dependencies
-- ✅ [qb-core](https://github.com/qbcore-framework/qb-core)
+## How to install and do not forget anything, or it will not work.
+- Step 1: Copy the directory mh-adminjobs to resources/[mh]/
+- Step 2: use `ensure mh-adminjobs` to start the script, or restart the server.
 
 
-## 🙏 How to install.
-- 👉 Step 1: Copy the directory qb-adminjobs to resources/[qb]/
-- 👉 Step 2: use `ensure qb-adminjobs` to start the script, or restart the server.
+## Available Jobs 
+- All jobs in resources/[qb]/qb-core/shared/jobs.lua 
+- and it select the boss type for the menu.
 
-
-## 👇 Commands (Admin only)
-- 👉 /onduty     (Go on duty)
-- 👉 /offduty    (Go off duty)
-- 👉 /nojob      (Set your job to unemployed)
-- 👉 /poljob     (Set your job to police)
-- 👉 /ambjob     (Set your job to ambulance)
-- 👉 /mechjob    (Set your job to mechanic)
-- 👉 /carjob     (Set your job to cardealer)
-- 👉 /realjob    (Set your job to realestate)
-
-
-# 🙈 Youtube
-- [Youtube](https://www.youtube.com/c/MaDHouSe79)
+# LICENSE
+[GPL LICENSE](./LICENSE)<br />
+&copy; [MaDHouSe79](https://www.youtube.com/@MaDHouSe79)
