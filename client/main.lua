@@ -59,7 +59,7 @@ local function LoadTriggerEvents()
     for job, v in pairs(QBShared.Jobs) do
         if job == "unemployed" then
             RegisterNetEvent('mh-adminjobs:client:' .. job, function(source)
-                TriggerServerEvent('mh-adminjobs:server:changeJob', "unemployed", 0)
+                TriggerServerEvent('mh-adminjobs:server:changeJob', job, 0)
             end)
         end
         for grade, d in pairs(v.grades) do
