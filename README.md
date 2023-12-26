@@ -32,6 +32,9 @@
 ## mh-adminjobs 
 - A ingame job changer for admins
 
+### Screenshot
+![foto](https://github.com/MaDHouSe79/mh-adminjobs/blob/main/screenshot/1.png)
+
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 
