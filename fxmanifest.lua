@@ -6,7 +6,7 @@ games { 'gta5' }
 
 author 'MaDHouSe79'
 description 'MH Adminjob Changer'
-version '1.0'
+version '1.0.0'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
