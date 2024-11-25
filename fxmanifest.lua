@@ -3,9 +3,9 @@
 --[[ ===================================================== ]]--
 fx_version 'cerulean'
 games { 'gta5' }
-
+repository 'https://github.com/MaDHouSe79/mh-adminjobs'
 author 'MaDHouSe79'
-description 'MH Adminjob Changer'
+description 'MH Adminjob - In game job changer for admins.'
 version '1.0.0'
 
 shared_scripts {

@@ -26,8 +26,9 @@
   <img alig src="https://github-profile-trophy.vercel.app/?username=MaDHouSe79&margin-w=15&column=6" />
 </p>
 
-## 🙈 Youtube
-- [Youtube](https://www.youtube.com/@MaDHouSe79)
+# My Youtube Channel and Discord
+- [Subscribe](https://www.youtube.com/c/@MaDHouSe79) 
+- [Discord](https://discord.gg/vJ9EukCmJQ)
 
 ## mh-adminjobs 
 - A ingame job changer for admins
