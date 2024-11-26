@@ -25,7 +25,7 @@ server_scripts {
 }
 
 dependencies {
-    'qb-core',
+    'qb-core', 'mh-core'
 }
 
 lua54 'yes'
