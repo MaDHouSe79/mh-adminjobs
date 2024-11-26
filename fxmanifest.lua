@@ -24,8 +24,4 @@ server_scripts {
     'server/update.lua',
 }
 
-dependencies {
-    'qb-core', 'mh-core'
-}
-
 lua54 'yes'
