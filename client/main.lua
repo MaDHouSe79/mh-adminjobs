@@ -4,7 +4,21 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local radialmenu = nil
 
-RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
+local function LoadTriggerEvents()
+    for job, v in pairs(QBShared.Jobs) do
+        if job == "unemployed" then
+            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
+                TriggerServerEvent('mh-adminjobs:server:changeJob', job, 0)
+            end)
+        else
+            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
+                TriggerEvent('mh-adminjobs:client:setJobRankMenu', job)
+            end)
+        end
+    end
+end
+
+local function OpenMainManu()
     QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
         if isAdmin then
             local num = 0
@@ -53,24 +67,54 @@ RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
             end
         end
     end)
+end
+
+RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
+    QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
+        if isAdmin then OpenMainManu() end
+    end)
 end)
 
-local function LoadTriggerEvents()
-    for job, v in pairs(QBShared.Jobs) do
-        if job == "unemployed" then
-            RegisterNetEvent('mh-adminjobs:client:' .. job, function(source)
-                TriggerServerEvent('mh-adminjobs:server:changeJob', job, 0)
-            end)
-        end
-        for grade, d in pairs(v.grades) do
-            if d.isboss then
-                RegisterNetEvent('mh-adminjobs:client:' .. job, function(source)
-                    TriggerServerEvent('mh-adminjobs:server:changeJob', job, grade)
-                end)
+RegisterNetEvent('mh-adminjobs:client:setJobRankMenu', function(job)
+    QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
+        if isAdmin then
+            local options = {}
+            for k, v in pairs(QBShared.Jobs) do
+                if k == job then
+                    for grade, data in pairs(v.grades) do
+                        local isBossTxt = ""
+                        if data.isboss then isBossTxt = "(Boss)" end
+                        options[#options + 1] = {
+                            id = grade,
+                            title = "Rank ".. grade.." ("..data.name..") "..isBossTxt.."",
+                            description = v.name,
+                            arrow = false,
+                            onSelect = function()
+                                TriggerServerEvent('mh-adminjobs:server:changeJob', job, grade)
+                            end
+                        }
+                    end
+                end
             end
+            table.sort(options, function(a, b) return a.id < b.id end)
+            options[#options + 1] = {
+                title = "Back",
+                description = '',
+                arrow = false,
+                onSelect = function()
+                    OpenMainManu()
+                end
+            }
+
+            lib.registerContext({
+                id = 'selectTrailerMenu',
+                title = "Select job rank",
+                options = options
+            })
+            lib.showContext('selectTrailerMenu')
         end
-    end
-end
+    end)
+end)
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
@@ -82,6 +126,6 @@ AddEventHandler('playerSpawned', function()
     LoadTriggerEvents()
 end)
 
-RegisterNetEvent('mh-adminjobs:client:ToggleDuty', function(source)
+RegisterNetEvent('mh-adminjobs:client:ToggleDuty', function()
     TriggerServerEvent("QBCore:ToggleDuty")
 end)
