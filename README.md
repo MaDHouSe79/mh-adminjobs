@@ -38,7 +38,8 @@
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-
+- [ox_lib](https://github.com/overextended/ox_lib/releases/)
+  
 ## How to install and do not forget anything, or it will not work.
 - Step 1: Copy the directory mh-adminjobs to resources/[mh]/
 - Step 2: use `ensure [mh]` to start, or restart the server.
