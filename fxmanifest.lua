@@ -6,7 +6,7 @@ games { 'gta5' }
 repository 'https://github.com/MaDHouSe79/mh-adminjobs'
 author 'MaDHouSe79'
 description 'MH Adminjob - In game job changer for admins.'
-version '1.0.1'
+version '1.0.2'
 
 shared_scripts {
     '@ox_lib/init.lua',
