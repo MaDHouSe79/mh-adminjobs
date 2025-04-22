@@ -4,18 +4,47 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local radialmenu = nil
 
-local function LoadTriggerEvents()
-    for job, v in pairs(QBShared.Jobs) do
-        if job == "unemployed" then
-            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
-                TriggerServerEvent('mh-adminjobs:server:changeJob', job, 0)
-            end)
-        else
-            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
-                TriggerEvent('mh-adminjobs:client:setJobRankMenu', job)
-            end)
+local function Notify(message, type, length)
+    lib.notify({title = "MH Admin Job Changer", description = message,  type = type})
+end
+
+local function SelectRankMenu(job)
+    QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
+        if isAdmin then
+            local options = {}
+            for k, v in pairs(QBShared.Jobs) do
+                if k == job then
+                    for grade, data in pairs(v.grades) do
+                        local isBossTxt = ""
+                        if data.isboss then isBossTxt = "(Boss)" end
+                        options[#options + 1] = {
+                            id = grade,
+                            title = "Rank ".. grade.." ("..data.name..") "..isBossTxt.."",
+                            description = v.name,
+                            arrow = false,
+                            onSelect = function()
+                                QBCore.Functions.TriggerCallback("mh-adminjobs:server:changeJob", function(isChanged)
+                                    if isChanged then Notify(Lang:t('jobInfo.job_change', {job = job, rank = grade})) end
+                                end, {job = job, rank = grade})
+                            end
+                        }
+                    end
+                end
+            end
+            table.sort(options, function(a, b) return a.id < b.id end)
+            options[#options + 1] = {
+                title = "Back",
+                description = '',
+                arrow = false,
+                onSelect = function()
+                    OpenMainManu()
+                end
+            }
+
+            lib.registerContext({id = 'selectTrailerMenu', title = "Select job rank", options = options})
+            lib.showContext('selectTrailerMenu')
         end
-    end
+    end)
 end
 
 local function OpenMainManu()
@@ -51,12 +80,7 @@ local function OpenMainManu()
                 end
             end
             num = num + 1
-            local AdminMenu = {
-                id = 'admininteractions' .. num,
-                title = 'Admin',
-                icon = 'briefcase',
-                items = {MenuItems}
-            }
+            local AdminMenu = {id = 'admininteractions' .. num, title = 'Admin Jobs', icon = 'briefcase', items = {MenuItems}}
             if #AdminMenu.items == 0 then
                 if radialmenu then
                     exports['qb-radialmenu']:RemoveOption(radialmenu)
@@ -69,51 +93,24 @@ local function OpenMainManu()
     end)
 end
 
-RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
-    QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
-        if isAdmin then OpenMainManu() end
-    end)
-end)
-
-RegisterNetEvent('mh-adminjobs:client:setJobRankMenu', function(job)
-    QBCore.Functions.TriggerCallback("mh-adminjobs:server:isAdmin", function(isAdmin)
-        if isAdmin then
-            local options = {}
-            for k, v in pairs(QBShared.Jobs) do
-                if k == job then
-                    for grade, data in pairs(v.grades) do
-                        local isBossTxt = ""
-                        if data.isboss then isBossTxt = "(Boss)" end
-                        options[#options + 1] = {
-                            id = grade,
-                            title = "Rank ".. grade.." ("..data.name..") "..isBossTxt.."",
-                            description = v.name,
-                            arrow = false,
-                            onSelect = function()
-                                TriggerServerEvent('mh-adminjobs:server:changeJob', job, grade)
-                            end
-                        }
-                    end
-                end
-            end
-            table.sort(options, function(a, b) return a.id < b.id end)
-            options[#options + 1] = {
-                title = "Back",
-                description = '',
-                arrow = false,
-                onSelect = function()
-                    OpenMainManu()
-                end
-            }
-
-            lib.registerContext({
-                id = 'selectTrailerMenu',
-                title = "Select job rank",
-                options = options
-            })
-            lib.showContext('selectTrailerMenu')
+local function LoadTriggerEvents()
+    for job, v in pairs(QBShared.Jobs) do
+        if job == "unemployed" then
+            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
+                QBCore.Functions.TriggerCallback("mh-adminjobs:server:changeJob", function(isChanged)
+                    if isChanged then Notify(Lang:t('jobInfo.job_change', {job = job, rank = 0})) end
+                end, {job = job, rank = 0})
+            end)
+        else
+            RegisterNetEvent('mh-adminjobs:client:' .. job, function()
+                SelectRankMenu(job)
+            end)
         end
-    end)
+    end
+end
+
+RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
+    OpenMainManu()
 end)
 
 AddEventHandler('onResourceStart', function(resource)
