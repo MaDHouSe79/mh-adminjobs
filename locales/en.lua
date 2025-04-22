@@ -3,7 +3,7 @@
 --[[ ===================================================== ]]--
 local Translations = {
     jobInfo = {
-        ["job_change"] = "Congratulations on your new job as a %{job} with rank %{rank} (Boss)", 
+        ["job_change"] = "Congratulations on your new job as a %{job} with rank %{rank}", 
     },
 }
 
