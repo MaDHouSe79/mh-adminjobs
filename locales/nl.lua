@@ -3,7 +3,7 @@
 --[[ ===================================================== ]]--
 local Translations = {
     jobInfo = {
-        ["job_change"] = "Gefeliciteerd met je nieuwe baan als %{job} met de rang %{rank} (Baas)", 
+        ["job_change"] = "Gefeliciteerd met je nieuwe baan als %{job} met de rang %{rank}", 
     },
 }
 
